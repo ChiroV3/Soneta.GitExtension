@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Soneta.GitExtension
+namespace Soneta.GitExtension.Tests
 {
-    public class Class1
+    public class GitExtensionTests
     {
+
     }
 }
