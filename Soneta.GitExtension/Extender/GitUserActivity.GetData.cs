@@ -6,6 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
+using Soneta.Tools;
+using Soneta.Business;
+using Soneta.Business.UI;
+using Soneta.GitExtension.Extender;
 
 namespace Soneta.GitExtension.Extender
 {
@@ -15,6 +19,25 @@ namespace Soneta.GitExtension.Extender
 
         #region Pobieranie offline
 
+        public MessageBoxInformation GetLocalRepo()
+        {
+            return new MessageBoxInformation(Strings.MsgTitle, Strings.MsgText)
+            {
+                YesHandler = () => QueryContextInformation.Create<NamedStream>(importFile)
+            };
+        }
+        private object importFile(NamedStream ns)
+        {
+            
+            using (var stream = new MemoryStream(ns.GetData()))
+            {
+                // Wczytujemy commmity 
+                GetCommitList(ns.FileName);
+            }
+            // Wymuszamy odświeżenie listy 
+            Context.Session.InvokeChanged();
+            return ns.FileName;
+        }
         //generowanie pliku z danymi o wszystkich commitach z wszystkich branchy 
         private void GenerateLogFile(string folderPath)
         {
@@ -64,21 +87,24 @@ namespace Soneta.GitExtension.Extender
         #endregion
 
 
-        private List<Commit> GetCommitList()
+        private void GetCommitList( string path)
         {
-            string path = " ";
             GenerateLogFile(path);
             List<string> Logs = GetLogsFromFile(path);
-            List<Commit> Commits = new List<Commit>();
+          
             foreach(var str in Logs)
             {
                 Commits.Add(GetSingleCommitFromLogLine(str));
-            }
-
-            return Commits;   
+            }  
         }
 
-
+        #region pobieranie z online repo
+        private void GetOnlineRepo()
+        {
+            
+        }
+        #endregion
+        
         #endregion
 
 
