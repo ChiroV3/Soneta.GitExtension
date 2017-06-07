@@ -13,5 +13,7 @@ namespace Soneta.GitExtension.Extender
     {
         public ObservableCollection<Commit> Commits { get; set; }
         public string UserName { get; set; }
+        public int NumberOfCommitsToday { get; set; }
+        public double AvgCommitsPerDay { get; set; }
     }
 }

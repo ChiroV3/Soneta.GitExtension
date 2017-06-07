@@ -62,11 +62,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extender\Commit.cs" />
+    <Compile Include="Extender\GitUserActivity.cs" />
+    <Compile Include="Extender\GitUserActivity.GetData.cs" />
     <Compile Include="Extender\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="UI\" />
+    <Content Include="UI\GitUserActivity.pageform.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

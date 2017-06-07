@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<DataForm xmlns="http://www.enova.pl/schema/form.xsd" Priority="100">
+  <Page CaptionHtml="Statystyki Użytkowników Repozytorium" DataContext="{DataSource}">
+    <Group CaptionHtml="Statystyki Commitów">
+      <Row>
+        <Stack Width="200" Height="*">
+          <Grid EditValue="{User}" Width="150" Height="*">
+            <Field CaptionHtml="Nazwa użytkownika" Width="20" EditValue="{UserName}" />
+            <Field CaptionHtml="Ilość Commitów Dzisiaj" Width="50" EditValue="{NumberOfCommitsToday}" />
+            <Field CaptionHtml="Średnia ilość Commitów na dzień" Width="10" Class="RightAlign" EditValue="{AvgCommitsPerDay}" />
+          </Grid>
+        </Stack>
+        <Stack Width="*">
+          <Command CaptionHtml="Wybierz repozytorium z komputera" MethodName="GetLocalRepo"/>
+          <Command CaptionHtml="Aktualizuj online" MethodName="GetOnlineRepo"/>
+        </Stack>
+      </Row>
+    </Group>
+  </Page>
+</DataForm>
