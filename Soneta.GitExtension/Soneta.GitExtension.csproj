@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extender\Commit.cs" />
+    <Compile Include="Extender\Menu.cs" />
     <Compile Include="Extender\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
