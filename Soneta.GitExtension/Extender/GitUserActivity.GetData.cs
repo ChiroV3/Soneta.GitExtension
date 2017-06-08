@@ -77,6 +77,7 @@ namespace Soneta.GitExtension.Extender
             //wyciaganie daty stworzenia/modyfikacji commita
             string datetime = LogLine.Substring(LogLine.IndexOf(':') + 2);
             LogLine = LogLine.Replace(":", "");
+            
             return new Commit
             {
                 Owner = _username,
@@ -92,6 +93,8 @@ namespace Soneta.GitExtension.Extender
                 {
                     Commits.Add(GetSingleCommitFromLogLine(str));
                 }
+            SortCommitsByDate(Commits);
+            AddCommitsToUser(Commits);
             return Commits;
         }
         #endregion

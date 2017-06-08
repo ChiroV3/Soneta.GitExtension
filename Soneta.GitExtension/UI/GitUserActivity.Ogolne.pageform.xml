@@ -5,9 +5,9 @@
       <Row>
         <Stack Width="200" Height="*">
           <Grid EditValue="{Users}" Width="150" Height="*">
-            <Field CaptionHtml="Nazwa użytkownika" Width="20" EditValue="{UserName}" />
-            <Field CaptionHtml="Ilość commitów dziś" Width="10" EditValue="{NumberOfCommitsToday}" />
-            <Field CaptionHtml="Średnia Liczba Commitów Dziennie" Width="10" Class="RightAlign" EditValue="{AvgCommitsPerDay}" />
+            <Field CaptionHtml="Nazwa użytkownika" Width="25" EditValue="{UserName}" />
+            <Field CaptionHtml="Ilość commitów dziś" Width="20" EditValue="{NumberOfCommitsToday}" />
+            <Field CaptionHtml="Średnia Liczba Commitów Dziennie" Width="25" Class="RightAlign" EditValue="{AvgCommitsPerDay}" />
           </Grid>
         </Stack>
         <Stack Width="*">
