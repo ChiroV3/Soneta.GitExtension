@@ -70,7 +70,7 @@ namespace Soneta.GitExtension {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wybieranie lokalnego repozytorium.
+        ///   Looks up a localized string similar to Wybieranie dowolny plik z lokalnego repozytorium.
         /// </summary>
         internal static string MsgTitle {
             get {

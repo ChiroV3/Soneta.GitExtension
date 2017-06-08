@@ -121,6 +121,6 @@
     <value>Czy chcesz zaktualizować tabele danymi z lokalnego repozytorium?</value>
   </data>
   <data name="MsgTitle" xml:space="preserve">
-    <value>Wybieranie lokalnego repozytorium</value>
+    <value>Wybieranie dowolny plik z lokalnego repozytorium</value>
   </data>
 </root>

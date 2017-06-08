@@ -10,7 +10,7 @@ using Soneta.GitExtension.Extender;
 [assembly: FolderView("Soneta.GitExtension",
     Priority = 10,
     Description = "Statystyki Repozytorium",
-    BrickColor = FolderViewAttribute.BlueBrick,
+    BrickColor = FolderViewAttribute.BlackBrick,
     Contexts = new object[] { LicencjeModułu.All }
 )]
 

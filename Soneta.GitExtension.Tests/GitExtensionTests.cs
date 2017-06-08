@@ -13,9 +13,17 @@ namespace Soneta.GitExtension.Tests
         [Test]
         public void GetCommitFromLogLine_Deserialize()
         {
-            string line = "ChiroV3 : 2017-06-06 14:15:25 +0200;";
+            string line = "ChiroV3 :  2017-06-07 20:57:34 +0200";
             var obj = new GitUserActivity();
-           // Assert.AreEqual("ChiroV3", obj.GetSingleCommitFromLogLine(line).Owner.UserName);
+            Assert.AreEqual("ChiroV3", obj.GetSingleCommitFromLogLine(line).Owner.UserName);
+        }
+        [Test]
+        [TestCase(@"E:\Develop\Soneta.GitExtension")]
+        public void CommitsFromGivenLocalRepositoryPath_GetList(string FolderPath)
+        {
+            var obj = new GitUserActivity();
+            var commits = obj.GetCommitList(FolderPath);
+            Assert.AreEqual("ChiroV3", commits[0].Owner.UserName);
         }
     }
 }

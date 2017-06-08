@@ -33,27 +33,35 @@
   <ItemGroup>
     <Reference Include="Soneta.Business">
       <HintPath>C:\Program Files (x86)\Soneta\enova365 11.3.5995\Soneta.Business.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Soneta.Business.UI">
       <HintPath>C:\Program Files (x86)\Soneta\enova365 11.3.5995\Soneta.Business.UI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Soneta.Core">
       <HintPath>C:\Program Files (x86)\Soneta\enova365 11.3.5995\Soneta.Core.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Soneta.CRM">
       <HintPath>C:\Program Files (x86)\Soneta\enova365 11.3.5995\Soneta.CRM.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Soneta.Handel">
       <HintPath>C:\Program Files (x86)\Soneta\enova365 11.3.5995\Soneta.Handel.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Soneta.Kasa">
       <HintPath>C:\Program Files (x86)\Soneta\enova365 11.3.5995\Soneta.Kasa.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Soneta.Types">
       <HintPath>C:\Program Files (x86)\Soneta\enova365 11.3.5995\Soneta.Types.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,10 +90,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="UI\GitUserActivity.Ogolne.pageform.xml">
+    <EmbeddedResource Include="UI\GitUserActivity.Ogolne.pageform.xml">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Utils\examples.ico" />
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\examples.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Schema\Form.xsd">

@@ -33,9 +33,9 @@ namespace Soneta.GitExtension.Extender
         //}
 
         //#endregion Widoczność zakładki
+        public List<Commit> Commits;
 
         #region Property dla formularza
-
         private SortedDictionary<string, User> _users;
         public IEnumerable<User> Users
         {
