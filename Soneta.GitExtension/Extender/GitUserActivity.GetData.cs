@@ -32,7 +32,7 @@ namespace Soneta.GitExtension.Extender
             int index = ns.FileName.LastIndexOf("\\");
             string DirectoryPath = ns.FileName.Substring(0, index);
             // Wczytujemy commmity 
-            List<Commit> UpdatedCommits =  GetCommitList(DirectoryPath);
+            List<Commit> UpdatedCommits = GetLocalRepoCommitList(DirectoryPath);
             // Wymuszamy odświeżenie listy 
             Context.Session.InvokeChanged();
             return "importowanie zakonczone";
@@ -54,7 +54,8 @@ namespace Soneta.GitExtension.Extender
             cmd.StandardInput.Close();
             cmd.WaitForExit();
             Console.WriteLine(cmd.StandardOutput.ReadToEnd());
-        
+
+
         }
 
         private List<string> GetLogsFromFile(string FolderPath)
@@ -78,19 +79,11 @@ namespace Soneta.GitExtension.Extender
             LogLine = LogLine.Replace(":", "");
             return new Commit
             {
-                Owner = new User
-                {
-                    UserName = _username
-
-                },
+                Owner = _username,
                 CreationDate = DateTime.ParseExact(datetime, "yyyy-MM-dd HH:mm:ss +ffff", CultureInfo.InvariantCulture)
             };
         }
-
-        #endregion
-
-
-        public List<Commit> GetCommitList(string path)
+        public List<Commit> GetLocalRepoCommitList(string path)
         {
                 GenerateLogFile(path);
                 List<string> Logs = GetLogsFromFile(path);
@@ -101,8 +94,10 @@ namespace Soneta.GitExtension.Extender
                 }
             return Commits;
         }
+        #endregion
 
-        #region pobieranie z online repo
+
+        #region Pobieranie z online repo
         private void GetOnlineRepo()
         {
 

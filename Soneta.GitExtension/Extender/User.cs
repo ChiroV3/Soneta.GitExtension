@@ -11,7 +11,7 @@ namespace Soneta.GitExtension.Extender
 {
     public class User
     {
-        public ObservableCollection<Commit> Commits { get; set; }
+        public List<Commit> Commits { get; set; }
         public string UserName { get; set; }
         public int NumberOfCommitsToday { get; set; }
         public double AvgCommitsPerDay { get; set; }

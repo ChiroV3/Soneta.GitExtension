@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Soneta.GitExtension.Extender
 {
@@ -13,14 +12,14 @@ namespace Soneta.GitExtension.Extender
             return commits.OrderBy(x => x.CreationDate).ToList();
         }
 
-        private void AddCommitsToUser(string UserName, List<Commit> commits)
+        public void AddCommitsToUser(List<Commit> commits)
         {
             List<User> users = new List<User>();
             
-            foreach( var commit in commits)
+            foreach (var commit in commits)
             {
                 var user = users.Where(x => x.UserName == commit.Owner).First();
-                if(user !=null)
+                if (user != null)
                 {
                     user.Commits.Add(commit);
                 }
@@ -29,9 +28,9 @@ namespace Soneta.GitExtension.Extender
                     users.Add(new User
                     {
                         UserName = commit.Owner,
-                        Commits = new List<Commit>().Add(commit)
+                        Commits = new List<Commit>() {commit}
                     });
-                    
+
                 }
             }
 
@@ -39,7 +38,23 @@ namespace Soneta.GitExtension.Extender
 
         private void GenerateUserActivityStats(User user)
         {
-            
+            user.AvgCommitsPerDay = CountAvgCommitsPerDay(user.Commits);
+            user.NumberOfCommitsToday = CountCommitsToday(user.Commits);
+        }
+
+        private int CountCommitsToday(List<Commit> commits)
+        {
+            DateTime dt = DateTime.Now;
+            string today = dt.ToString("yyyy-MM-dd HH:mm:ss +ffff");
+            return commits.Where(x => x.CreationDate.ToString("yyyy-MM-dd HH:mm:ss +ffff") == today).Count();
+        }
+
+        private double CountAvgCommitsPerDay(List<Commit> commits)
+        {
+            DateTime dt = DateTime.Today;
+            double TotalDays = (dt - commits.Last().CreationDate).TotalDays;
+
+            return (commits.Count / TotalDays);
         }
     }
 }

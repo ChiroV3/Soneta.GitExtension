@@ -73,6 +73,7 @@
     <Compile Include="Extender\Commit.cs" />
     <Compile Include="Extender\GitUserActivity.cs" />
     <Compile Include="Extender\GitUserActivity.GetData.cs" />
+    <Compile Include="Extender\GitUserActivity.ProcessingData.cs" />
     <Compile Include="Extender\Menu.cs" />
     <Compile Include="Extender\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
