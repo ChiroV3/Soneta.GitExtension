@@ -8,7 +8,7 @@ namespace Soneta.GitExtension.Extender
 {
     public class Commit
     {
-        public User Owner { get; set; }
+        public string Owner { get; set; }
         public DateTime CreationDate { get; set; }
         public string BranchName { get; set; }
     }
