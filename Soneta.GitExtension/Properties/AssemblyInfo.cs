@@ -8,9 +8,9 @@ using Soneta.GitExtension.Utils;
 [assembly: AssemblyTitle("Soneta.GitExtension")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Mateusz Taborski")]
 [assembly: AssemblyProduct("Soneta.GitExtension")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright Mateusz Taborski ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
