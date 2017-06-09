@@ -21,9 +21,6 @@ namespace Soneta.GitExtension.Extender
         {
             get
             {
-                if (_users != null) return
-                    _users.ToArray();
-                
                 return _users.ToArray();
             }
         }

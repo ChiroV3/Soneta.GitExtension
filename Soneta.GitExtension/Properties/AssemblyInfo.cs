@@ -10,7 +10,7 @@ using Soneta.GitExtension.Utils;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mateusz Taborski")]
 [assembly: AssemblyProduct("Soneta.GitExtension")]
-[assembly: AssemblyCopyright("Copyright Mateusz Taborski ©  2017")]
+[assembly: AssemblyCopyright("Copyright Mateusz Taborski © 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

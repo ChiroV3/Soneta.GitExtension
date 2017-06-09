@@ -15,7 +15,7 @@ namespace Soneta.GitExtension.Extender
 
         public void AddCommitsToUser(List<Commit> commits)
         {
-            
+            _users?.Clear();
             foreach (var commit in commits)
             {
                
@@ -33,7 +33,7 @@ namespace Soneta.GitExtension.Extender
 
                 }
             }
-            foreach(var us in _users)
+            foreach (var us in _users)
             {
                 GenerateUserActivityStats(us);
             }
@@ -48,18 +48,15 @@ namespace Soneta.GitExtension.Extender
 
         private int CountCommitsToday(List<Commit> commits)
         {
-            DateTime dt = DateTime.Now;     
+            DateTime dt = DateTime.Now;
             string today = dt.ToString("yyyy-MM-dd");
             return commits.Where(x => x.CreationDate.ToString("yyyy-MM-dd") == today).Count();
         }
 
         private double CountAvgCommitsPerDay(List<Commit> commits)
         {
-            DateTime dt = DateTime.Today;
-            DateTime t = commits.Last().CreationDate;
-            TimeSpan diff = dt - t;
-            double TotalDays = (dt - commits.Last().CreationDate).TotalDays;
-            return (commits.Count / TotalDays);
+            TimeSpan tspan = DateTime.UtcNow - commits.Last().CreationDate;
+            return (commits.Count/ tspan.TotalDays);
         }
     }
 }
